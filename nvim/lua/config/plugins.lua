@@ -18,6 +18,8 @@ require('packer').startup(function(use)
   -- lazygit
   use 'kdheepak/lazygit.nvim'
 
+  use 'xiyaowong/transparent.nvim'
+
   -- Snippets
   use 'honza/vim-snippets'
   use 'rafamadriz/friendly-snippets'

@@ -20,9 +20,3 @@ require("nvim-tree").setup({
     },
 })
 
--- Ensure NvimTree background is transparent
-vim.cmd('highlight NvimTreeNormal guibg=none')
-vim.cmd('highlight NvimTreeNormalNC guibg=none')
-vim.cmd('highlight NvimTreeEndOfBuffer guibg=none')
-vim.cmd('highlight NvimTreeVertSplit guibg=none')
-
