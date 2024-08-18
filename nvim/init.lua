@@ -36,4 +36,5 @@ require('config.dressing')
 require('config.fine-cmdline')
 require('config.whichkey')
 require('mini.icons').setup()
+require('config.transparent')
 
