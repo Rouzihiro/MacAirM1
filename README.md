@@ -142,10 +142,116 @@ This will allow zsh to save the history to a file and configure how it should do
 Then go back to the command line and run:
 
 
-```cat -v
+```bash
+cat -v
 ```
 Now press on your up and down arrow keys.
 
 Copy the codes that you get as output.
 
 Open the ~/.zshrc file again and add the following to the bottom of this file:
+
+```bash
+# completion using arrow keys (based on history)
+bindkey '^[[A' history-search-backward
+bindkey '^[[B' history-search-forward
+```
+
+***Setup zsh-autosuggestions plugin***
+This plugin provides some really nice auto completion functionality as you type out commands.
+
+```bash
+brew install zsh-autosuggestions
+```
+
+Then run the following:
+
+```bash
+echo "source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc
+This will add what you need to ~/.zshrc.
+```
+
+Now source it:
+
+```bash
+source ~/.zshrc
+```
+
+Now you can use the plugin! When you get a suggestion and want to use it, use the right arrow key.
+
+***Setup zsh-syntax-highlighting***
+This will provide some really nice syntax highlighting as you type out commands.
+
+```bash
+brew install zsh-syntax-highlighting
+```
+
+Then run:
+
+```bash
+echo "source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
+This adds what you need to ~/.zshrc to enable the plugin.
+```
+
+Now source ~/.zshrc:
+
+```bash
+source ~/.zshrc
+```
+You should be getting the syntax highlighting now!
+
+
+***Install eza (better ls)***
+eza is a better version of ls with lots of different options.
+
+Install it:
+
+```bash
+brew install eza
+```
+
+Now you can start using it!
+
+You can create an alias for it in ~/.zshrc like so:
+
+
+```bash
+# ---- Eza (better ls) -----
+
+alias ls="eza --icons=always"
+```
+
+***Install zoxide (better cd)***
+zoxide is an amazing alternative to cd.
+
+It will remember the directories you’ve visited in the past and make it really easy to navigate back to them by just typing out a portion of the name of the directory you want to visit.
+
+```bash
+brew install zoxide
+```
+
+Then add the following to ~/.zshrc:
+
+
+```bash
+# ---- Zoxide (better cd) ----
+eval "$(zoxide init zsh)"
+```
+
+If you want to keep using cd then create an alias in ~/.zshrc:
+
+```bash
+# ---- Zoxide (better cd) ----
+eval "$(zoxide init zsh)"
+
+alias cd="z"
+```
+
+Save and then run:
+
+```bash
+source ~/.zshrc
+```
+
+Now you can use z as a much smarter replacement to cd.
+
