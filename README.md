@@ -102,7 +102,7 @@ brew install fastfetch
 
 ### Install Unar (unrar)
 ```bash
-brew install urar
+brew install unar
 ```
 
 ### Install Lazygit
@@ -198,7 +198,7 @@ The powerlevel10k configuration wizard should show up now.
 If you want to open the wizard manually do:
 
 ```bash
-p10k configure.
+p10k configure
 ```
 
 Answer the prompts to make the theme look like you would like it to. For the colors of my coolnight theme to work use either lean (with the 8 colors option) or rainbow.
