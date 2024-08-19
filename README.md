@@ -60,13 +60,63 @@ Now source ~/.zprofile by doing:
 ```bash
 source ~/.zprofile
 ```
-### 2. Install git
+
+### essential brew commands
+```bash
+brew upgrade
+brew upgrade --cask
+brew update
+brew cleanup
+brew doctor
+brew list --version
+brew uninstall [...]
+brew services list
+```
+
+Installation of homebrew essentials
+
+### Install Tiling Window Manager - Yabai
+
+```bash
+brew install koekeishiya/formulae/yabai
+```
+
+### Install SKHD
+
+```bash
+brew install koekeishiya/formulae/skhd  
+```
+
+### Install File Manager - Yazi
+
+```bash
+brew install koekeishiya/formulae/yabai
+```
+
+### Install Fastfetch
+
+```bash
+brew install fastfetch  
+```
+
+
+### Install Unar (unrar)
+```bash
+brew install urar
+```
+
+### Install Lazygit
+```bash
+brew install lazygit
+```
+
+### Install git
 
 ```bash
 brew install git
 ```
 
-### 3. Install Meslo Nerd Font
+### 2. Install Meslo Nerd Font
 **Nerd Fonts** are great for showing icons in the terminal. I personally use Meslo Nerd Font, but there are others.
 
 You can install a nerd font with homebrew. Take a look at the fonts in the hombrew casks repo: **homebrew-cask**
