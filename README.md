@@ -84,12 +84,15 @@ brew install font-meslo-lg-nerd-font
 Follow these steps to install and configure Kitty:
 
 1. Install Kitty via Homebrew:
-   ```bash
+
+```bash
    brew install kitty
 ```
 
 ### 5. Setting Up NVim
-
+```bash
+   brew install nvim
+```
 
 
 ### 6. Install powerlevel10k theme
