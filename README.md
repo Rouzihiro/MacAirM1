@@ -38,10 +38,106 @@ Take a look at what your macOS can look like after following this guide:
 
 ## Installation Guide
 
-### 1. Setting Up Kitty
+### 1. Install homebrew
+
+Run the following command:
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+Add To Path (Only Apple Silicon Macbooks)
+After installing, add it to the path. This step shouldn’t be necessary on Intel macs.
+
+Run the following command to add the necessary line to ~/.zprofile:
+
+```bash
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+
+
+Now source ~/.zprofile by doing:
+
+```bash
+source ~/.zprofile
+
+Install git
+Next install git:
+
+### 2. Install git
+
+```bash
+brew install git
+
+### 3. Install Meslo Nerd Font
+**Nerd Fonts** are great for showing icons in the terminal. I personally use Meslo Nerd Font, but there are others.
+
+You can install a nerd font with homebrew. Take a look at the fonts in the hombrew casks repo: **homebrew-cask**
+
+It is no longer necessary to tap the homebrew-cask-fonts repo as the fonts have been added to homebrew-cask.
+
+Then you can install the nerd font you’d like
+
+```bash
+brew install font-meslo-lg-nerd-font
+
+
+### 4. Setting Up Kitty
 
 Follow these steps to install and configure Kitty:
 
 1. Install Kitty via Homebrew:
    ```bash
    brew install kitty
+
+### 5. Setting Up NVim
+
+
+
+### 6. Install powerlevel10k theme
+**Powerlevel10k** is an awesome theme for zsh.
+
+   ```bash
+brew install powerlevel10k
+
+Then run the following:
+
+   ```bash
+echo "source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme" >> ~/.zshrc
+
+This will add what you need to ~/.zshrc to enable it.
+
+Now source ~/.zshrc:
+
+   ```bash
+source ~/.zshrc
+
+The powerlevel10k configuration wizard should show up now.
+
+If you want to open the wizard manually do: p10k configure.
+
+Answer the prompts to make the theme look like you would like it to. For the colors of my coolnight theme to work use either lean (with the 8 colors option) or rainbow.
+
+### 7. Better zsh history completion with up, down arrows
+Let’s improve the history completion with the up and down arrows.
+
+Open ~/.zshrc and add the following to the bottom of this file:
+
+   ```bash
+HISTFILE=$HOME/.zhistory
+SAVEHIST=1000
+HISTSIZE=999
+setopt share_history
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+setopt hist_verify
+
+This will allow zsh to save the history to a file and configure how it should do so.
+
+Then go back to the command line and run:
+
+
+cat -v
+Now press on your up and down arrow keys.
+
+Copy the codes that you get as output.
+
+Open the ~/.zshrc file again and add the following to the bottom of this file:
