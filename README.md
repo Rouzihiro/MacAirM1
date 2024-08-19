@@ -44,6 +44,7 @@ Run the following command:
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
 
 Add To Path (Only Apple Silicon Macbooks)
 After installing, add it to the path. This step shouldn’t be necessary on Intel macs.
@@ -52,20 +53,18 @@ Run the following command to add the necessary line to ~/.zprofile:
 
 ```bash
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
-
+```
 
 Now source ~/.zprofile by doing:
 
 ```bash
 source ~/.zprofile
-
-Install git
-Next install git:
-
+```
 ### 2. Install git
 
 ```bash
 brew install git
+```
 
 ### 3. Install Meslo Nerd Font
 **Nerd Fonts** are great for showing icons in the terminal. I personally use Meslo Nerd Font, but there are others.
@@ -78,7 +77,7 @@ Then you can install the nerd font you’d like
 
 ```bash
 brew install font-meslo-lg-nerd-font
-
+```
 
 ### 4. Setting Up Kitty
 
@@ -87,6 +86,7 @@ Follow these steps to install and configure Kitty:
 1. Install Kitty via Homebrew:
    ```bash
    brew install kitty
+```
 
 ### 5. Setting Up NVim
 
@@ -97,11 +97,13 @@ Follow these steps to install and configure Kitty:
 
    ```bash
 brew install powerlevel10k
+```
 
 Then run the following:
 
    ```bash
 echo "source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme" >> ~/.zshrc
+```
 
 This will add what you need to ~/.zshrc to enable it.
 
@@ -109,6 +111,7 @@ Now source ~/.zshrc:
 
    ```bash
 source ~/.zshrc
+```
 
 The powerlevel10k configuration wizard should show up now.
 
@@ -129,13 +132,15 @@ setopt share_history
 setopt hist_expire_dups_first
 setopt hist_ignore_dups
 setopt hist_verify
+```
 
 This will allow zsh to save the history to a file and configure how it should do so.
 
 Then go back to the command line and run:
 
 
-cat -v
+```cat -v
+```
 Now press on your up and down arrow keys.
 
 Copy the codes that you get as output.
