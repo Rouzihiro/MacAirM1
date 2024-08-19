@@ -90,7 +90,7 @@ brew install koekeishiya/formulae/skhd
 ### Install File Manager - Yazi
 
 ```bash
-brew install koekeishiya/formulae/yabai
+brew install yazi
 ```
 
 ### Install Fastfetch
