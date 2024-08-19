@@ -116,6 +116,14 @@ brew install lazygit
 brew install git
 ```
 
+### essential git commands
+```bash
+git add .
+git status
+git commit -m "[...]"
+git push -u origin main
+```
+
 ### 2. Install Meslo Nerd Font
 **Nerd Fonts** are great for showing icons in the terminal. I personally use Meslo Nerd Font, but there are others.
 
