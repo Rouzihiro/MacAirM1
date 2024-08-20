@@ -220,8 +220,6 @@ After saving, in your terminal do:
 source ~/.zshrc
 ```
 
-
-
 ### bat (better cat)
 bat is a really nice alternative to cat to display file contents in the terminal with syntax highlighting.
 
@@ -291,7 +289,6 @@ Then save this file and run:
 ```bash
 source ~/.zshrc
 ```
-
 
 ### essential git commands
 ```bash
