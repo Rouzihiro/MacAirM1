@@ -133,11 +133,13 @@ open ~/.zshrc
 ```bash
 nvim ~/.zshrc
 ```
-
 add:
+
+```bash
 # ---- FZF -----
 # Set up fzf key bindings and fuzzy completion
 eval "$(fzf --zsh)"
+```
 
 ```bash
 source ~/.zshrc
@@ -145,7 +147,8 @@ source ~/.zshrc
 Now you can use fzf!
 
 Examples of what you can do with it:
- _____________________________________________________________________________________________________
+
+
 | Key Combination                                 | Description                                       |
 |-------------------------------------------------|---------------------------------------------------|
 | `CTRL-t`                                        | Look for files and directories                    |
@@ -162,7 +165,6 @@ Examples of what you can do with it:
 | `ssh **Tab`                                     | Look for recently visited host names              |
 | `kill -9 **Tab`                                 | Look for process name to kill to get pid          |
 | Any command (like `nvim` or `code`) + `**Tab`   | Look for files & directories to complete command  |
-|-------------------------------------------------|---------------------------------------------------|
 
 ### essential git commands
 ```bash
