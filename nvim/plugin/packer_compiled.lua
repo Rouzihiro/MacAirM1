@@ -109,10 +109,20 @@ _G.packer_plugins = {
     path = "/Users/rey/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
+  ["cmp-path"] = {
+    loaded = true,
+    path = "/Users/rey/.local/share/nvim/site/pack/packer/start/cmp-path",
+    url = "https://github.com/hrsh7th/cmp-path"
+  },
   cmp_luasnip = {
     loaded = true,
     path = "/Users/rey/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
+  },
+  ["codeium.nvim"] = {
+    loaded = true,
+    path = "/Users/rey/.local/share/nvim/site/pack/packer/start/codeium.nvim",
+    url = "https://github.com/Exafunction/codeium.nvim"
   },
   ["dressing.nvim"] = {
     loaded = true,
@@ -173,11 +183,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/rey/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
-  },
-  ["nvim-llama"] = {
-    loaded = true,
-    path = "/Users/rey/.local/share/nvim/site/pack/packer/start/nvim-llama",
-    url = "https://github.com/jpmcb/nvim-llama"
   },
   ["nvim-lspconfig"] = {
     loaded = true,

@@ -24,15 +24,15 @@ Take a look at what your macOS can look like after following this guide:
  - Blazing fast and highly customizable terminal.
   - Beautiful color schemes that integrate seamlessly with your macOS theme.
 
-- **Yazi File Manager**:
+## <a href="https://yazi-rs.github.io/" style="font-size:24px; font-weight:bold;">Yazi File Manager</a>
   - A modern, fast, and minimalistic file manager.
   - Highly configurable with advanced theming options.
 
-- **Neovim (Nvim) Editor**:
+## <a href="https://neovim.io/" style="font-size:24px; font-weight:bold;">Neovim (Nvim) Editor</a>
   - A hyper-extensible and fast text editor.
   - Powerful plugins and themes to match the macOS aesthetic.
 
-- **Yabai Tiling Window Manager**:
+## <a href="https://github.com/koekeishiya/yabai" style="font-size:24px; font-weight:bold;">Yabai Tiling Window Manager</a>
   - A powerful and flexible tiling window manager for macOS.
   - Make your workflow efficient with custom tiling layouts.
 
@@ -41,6 +41,8 @@ Take a look at what your macOS can look like after following this guide:
 ## Installation Guide
 
 ### 1. Install homebrew
+
+## <a href="https://brew.sh/" style="font-size:24px; font-weight:bold;">Homebrew</a>
 
 Run the following command:
 

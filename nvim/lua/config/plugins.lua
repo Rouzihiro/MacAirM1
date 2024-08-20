@@ -5,9 +5,6 @@ require('packer').startup(function(use)
 
   -- Tokyonight Theme
   use 'folke/tokyonight.nvim'
- 
-  -- AI Coding
-  use 'jpmcb/nvim-llama'
 
   -- Table mode plugin
   use 'dhruvasagar/vim-table-mode'
@@ -69,6 +66,7 @@ require('packer').startup(function(use)
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path' 
 
   -- Lspkind - VSCODE-like pictograms for completion
   use 'onsails/lspkind-nvim'
@@ -97,7 +95,6 @@ require('packer').startup(function(use)
 
   -- Plenary - Lua functions used by many plugins
   use 'nvim-lua/plenary.nvim'
-end)
 
 -- Tokyonight theme setup
 require('tokyonight').setup({
@@ -105,3 +102,7 @@ require('tokyonight').setup({
 })
 vim.cmd('colorscheme tokyonight')
 
+  -- Codeium - Code completion plugin
+  use 'Exafunction/codeium.nvim'
+
+end)
