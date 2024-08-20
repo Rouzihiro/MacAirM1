@@ -181,7 +181,7 @@ brew install fd
 ```bash
 nvim ~/.zshrc
 ```
-Add to the bottom of this file:
+Add to the bottom of this file: (theme also included)
 
 ```bash
 # -- Use fd instead of fzf --
@@ -201,6 +201,17 @@ _fzf_compgen_path() {
 _fzf_compgen_dir() {
   fd --type=d --hidden --exclude .git . "$1"
 }
+
+# --- setup fzf theme ---
+fg="#CBE0F0"
+bg="#011628"
+bg_highlight="#143652"
+purple="#B388FF"
+blue="#06BCE4"
+cyan="#2CF9ED"
+
+export FZF_DEFAULT_OPTS="--color=fg:${fg},bg:${bg},hl:${purple},fg+:${fg},bg+:${bg_highlight},hl+:${purple},info:${blue},prompt:${cyan},pointer:${cyan},marker:${cyan},spinner:${cyan},header:${cyan}"
+
 ```
 
 After saving, in your terminal do:
@@ -208,6 +219,79 @@ After saving, in your terminal do:
 ```bash
 source ~/.zshrc
 ```
+
+
+
+### bat (better cat)
+bat is a really nice alternative to cat to display file contents in the terminal with syntax highlighting.
+
+```bash
+brew install bat
+```
+
+Now you can start using it!
+
+Example:
+
+bat filename.txt
+The example above would print out the contents of a file called filename.txt.
+
+To see examples of all of the themes you can use:
+
+```bash
+bat --list-themes | fzf --preview="bat --theme={} --color=always /path/to/file"
+Make sure to replace /path/to/file with the path to an actual file.
+```
+
+Install a custom theme
+If you find a theme on github for example, you can follow these steps.
+
+The first time you do this create the following directory:
+
+```bash
+mkdir -p "$(bat --config-dir)/themes"
+```
+
+Then move into it:
+
+```bash
+cd "$(bat --config-dir)/themes"
+```
+
+Then you can download the file for the theme you want to use into this directory.
+
+The file should use the #.tmTheme# extension.
+
+For example:
+
+```bash
+curl -O https://raw.githubusercontent.com/folke/tokyonight.nvim/main/extras/sublime/tokyonight_night.tmTheme
+```
+
+This will install the night version of the tokyonight theme.
+
+Then to use it run:
+
+```bash
+bat cache --build
+```
+
+And then add the following to your ~/.zshrc:
+
+```bash
+# ----- Bat (better cat) -----
+
+export BAT_THEME=tokyonight_night
+```
+
+Replace tokyonight_night with the name of the theme you would like to use.
+
+Then save this file and run:
+
+```bash
+source ~/.zshrc
+```
+
 
 ### essential git commands
 ```bash
