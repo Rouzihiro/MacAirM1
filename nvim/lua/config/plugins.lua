@@ -5,7 +5,10 @@ require('packer').startup(function(use)
 
   -- Tokyonight Theme
   use 'folke/tokyonight.nvim'
-  
+ 
+  -- AI Coding
+  use 'jpmcb/nvim-llama'
+
   -- Table mode plugin
   use 'dhruvasagar/vim-table-mode'
 

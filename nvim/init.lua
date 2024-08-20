@@ -37,4 +37,7 @@ require('config.fine-cmdline')
 require('config.whichkey')
 require('mini.icons').setup()
 require('config.transparent')
-
+require('nvim-llama').setup {
+   debug = false,  -- Disable debugging logs
+    model = "orca-mini",  -- Specify the model for Ollama to use
+}
