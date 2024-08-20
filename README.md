@@ -18,12 +18,10 @@ Take a look at what your macOS can look like after following this guide:
 
 ## Features
 
-```html
 <div class="container">
  <a href="https://github.com/kovidgoyal/kitty">Kitty Terminal 
 Emulator:</a>
 </div>
-
 <style>
  .container {
  font-weight: bold;
@@ -34,7 +32,6 @@ Emulator:</a>
  color: black;
  }
 </style>
-```
 
  - Blazing fast and highly customizable terminal.
   - Beautiful color schemes that integrate seamlessly with your macOS theme.
