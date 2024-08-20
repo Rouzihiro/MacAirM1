@@ -166,6 +166,49 @@ Examples of what you can do with it:
 | `kill -9 **Tab`                                 | Look for process name to kill to get pid          |
 | Any command (like `nvim` or `code`) + `**Tab`   | Look for files & directories to complete command  |
 
+
+### Use fd with fzf
+fzf by default uses the find command to look for files and directories.
+
+Let’s replace that with fd for better functionality, like ignoring files ignored by git (with .gitignore).
+
+Install fd:
+
+```bash
+brew install fd
+```
+
+```bash
+nvim ~/.zshrc
+```
+Add to the bottom of this file:
+
+```bash
+# -- Use fd instead of fzf --
+
+export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
+
+# Use fd (https://github.com/sharkdp/fd) for listing path candidates.
+# - The first argument to the function ($1) is the base path to start traversal
+# - See the source code (completion.{bash,zsh}) for the details.
+_fzf_compgen_path() {
+  fd --hidden --exclude .git . "$1"
+}
+
+# Use fd to generate the list for directory completion
+_fzf_compgen_dir() {
+  fd --type=d --hidden --exclude .git . "$1"
+}
+```
+
+After saving, in your terminal do:
+
+```bash
+source ~/.zshrc
+```
+
 ### essential git commands
 ```bash
 git add .
