@@ -77,7 +77,30 @@ brew uninstall [...]
 brew services list
 ```
 
-#Installation of homebrew essentials
+##Installation of homebrew essentials
+
+## Setting Up Kitty
+
+Follow these steps to install and configure Kitty:
+
+1. Install Kitty via Homebrew:
+
+```bash
+   brew install kitty
+```
+**Set up kitty theme**
+
+```bash
+kitten theme
+```
+
+## Setting Up NVim
+```bash
+   brew install nvim
+```
+
+
+
 
 ### Install Tiling Window Manager - Yabai
 
@@ -118,6 +141,14 @@ brew install lazygit
 
 ```bash
 brew install git
+```
+
+### essential git commands
+```bash
+git add .
+git status
+git commit -m "[...]"
+git push -u origin main
 ```
 
 ### Install fzf (command line fuzzy finder)
@@ -334,17 +365,7 @@ Now if mistype a command you can run `fuck` or `fk` afterwards.
 
 If there are is more than one result you can use your up and down arrow keys and then enter to select the one you want.
 
-
-
-### essential git commands
-```bash
-git add .
-git status
-git commit -m "[...]"
-git push -u origin main
-```
-
-### 2. Install Meslo Nerd Font
+### Install Meslo Nerd Font
 **Nerd Fonts** are great for showing icons in the terminal. I personally use Meslo Nerd Font, but there are others.
 
 You can install a nerd font with homebrew. Take a look at the fonts in the hombrew casks repo: **homebrew-cask**
@@ -357,28 +378,7 @@ Then you can install the nerd font you’d like
 brew install font-meslo-lg-nerd-font
 ```
 
-### 4. Setting Up Kitty
-
-Follow these steps to install and configure Kitty:
-
-1. Install Kitty via Homebrew:
-
-```bash
-   brew install kitty
-```
-**Set up kitty theme**
-
-```bash
-kitten theme
-```
-
-### 5. Setting Up NVim
-```bash
-   brew install nvim
-```
-
-
-### 6. Install powerlevel10k theme
+### Install powerlevel10k theme
 **Powerlevel10k** is an awesome theme for zsh.
 
    ```bash
@@ -430,7 +430,7 @@ p10k configure
 
 Answer the prompts to make the theme look like you would like it to. For the colors of my coolnight theme to work use either lean (with the 8 colors option) or rainbow.
 
-### 7. Better zsh history completion with up, down arrows
+### Better zsh history completion with up, down arrows
 Let’s improve the history completion with the up and down arrows.
 
 Open `~/.zshrc` and add the following to the bottom of this file:
