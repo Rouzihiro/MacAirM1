@@ -411,6 +411,7 @@ alias ls="eza --icons=always"
 
 # ---- Zoxide (better cd) ----
 eval "$(zoxide init zsh)"
+alias cd="z"
 ```
 
 
@@ -495,6 +496,60 @@ brew install eza
 
 Now you can start using it!
 
+### Setup fzf previews
+Now that you have eza and bat setup you can setup some really nice previews for fzf.
+
+In your `~/.zshrc`, where you’re configuring fzf, add the following:
+
+```bash
+export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --line-range :500 {}'"
+export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
+
+# Advanced customization of fzf options via _fzf_comprun function
+# - The first argument to the function is the name of the command.
+# - You should make sure to pass the rest of the arguments to fzf.
+_fzf_comprun() {
+  local command=$1
+  shift
+
+  case "$command" in
+    cd)           fzf --preview 'eza --tree --color=always {} | head -200' "$@" ;;
+    export|unset) fzf --preview "eval 'echo $'{}"         "$@" ;;
+    ssh)          fzf --preview 'dig {}'                   "$@" ;;
+    *)            fzf --preview "bat -n --color=always --line-range :500 {}" "$@" ;;
+  esac
+}
+```
+
+This will setup file previews with bat as well as directory previews with eza and some other previews as well.
+
+There is one slight issue with this code though. When we are looking for files and directories with Ctrl-T or doing something like nvim **Tab, we are using bat to generate the preview but this won’t work for directories and we’ll get an error.
+
+We can fix this by using an if statement that checks whether the path to what we should preview is a directory or not and use eza instead for the preview in this case.
+
+To do this you can replace the previous code with something like the following:
+
+```bash
+show_file_or_dir_preview="if [ -d {} ]; then eza --tree --color=always {} | head -200; else bat -n --color=always --line-range :500 {}; fi"
+
+export FZF_CTRL_T_OPTS="--preview '$show_file_or_dir_preview'"
+export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
+
+# Advanced customization of fzf options via _fzf_comprun function
+# - The first argument to the function is the name of the command.
+# - You should make sure to pass the rest of the arguments to fzf.
+_fzf_comprun() {
+  local command=$1
+  shift
+
+  case "$command" in
+    cd)           fzf --preview 'eza --tree --color=always {} | head -200' "$@" ;;
+    export|unset) fzf --preview "eval 'echo ${}'"         "$@" ;;
+    ssh)          fzf --preview 'dig {}'                   "$@" ;;
+    *)            fzf --preview "$show_file_or_dir_preview" "$@" ;;
+  esac
+}
+```
 
 ***Install zoxide (better cd)***
 `zoxide` is an amazing alternative to `cd`.
@@ -505,13 +560,11 @@ It will remember the directories you’ve visited in the past and make it really
 brew install zoxide
 ```
 
-
 If you want to keep using cd then create an `alias` in `~/.zshrc`:
 
 ```bash
 # ---- Zoxide (better cd) ----
 eval "$(zoxide init zsh)"
-
 alias cd="z"
 ```
 
@@ -523,3 +576,6 @@ source ~/.zshrc
 
 Now you can use z as a much smarter replacement to `cd`.
 
+If you want to trigger fzf when you’re moving to a directory with `z` you can do `space` + `tab`.
+
+Done!
