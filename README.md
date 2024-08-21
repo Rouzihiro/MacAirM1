@@ -8,7 +8,7 @@ Welcome to the ultimate guide for transforming your macOS environment using some
 
 ## Screenshots
 
-Take a look at what your macOS can look like after following this guide:
+Take a look at what your `macOS` can look like after following this guide:
 
 ![Screenshot 1](./images/2.png)
 ![Screenshot 2](./images/3.png)
@@ -21,11 +21,11 @@ Take a look at what your macOS can look like after following this guide:
 
 ## <a href="https://github.com/kovidgoyal/kitty" style="font-size:24px; font-weight:bold;">Kitty Terminal Emulator</a>
 
- - Blazing fast and highly customizable terminal.
+ - Blazing fast and highly customizable `terminal`.
   - Beautiful color schemes that integrate seamlessly with your macOS theme.
 
 ## <a href="https://yazi-rs.github.io/" style="font-size:24px; font-weight:bold;">Yazi File Manager</a>
-  - A modern, fast, and minimalistic file manager.
+  - A modern, fast, and minimalistic `file manager`.
   - Highly configurable with advanced theming options.
 
 ## <a href="https://neovim.io/" style="font-size:24px; font-weight:bold;">Neovim (Nvim) Editor</a>
@@ -50,16 +50,16 @@ Run the following command:
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-Add To Path (Only Apple Silicon Macbooks)
+Add To Path `(Only Apple Silicon Macbooks)`
 After installing, add it to the path. This step shouldn’t be necessary on Intel macs.
 
-Run the following command to add the necessary line to ~/.zprofile:
+Run the following command to add the necessary line to `~/.zprofile`:
 
 ```bash
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
 ```
 
-Now source ~/.zprofile by doing:
+Now source `~/.zprofile` by doing:
 
 ```bash
 source ~/.zprofile
@@ -77,7 +77,7 @@ brew uninstall [...]
 brew services list
 ```
 
-Installation of homebrew essentials
+#Installation of homebrew essentials
 
 ### Install Tiling Window Manager - Yabai
 
@@ -121,9 +121,9 @@ brew install git
 ```
 
 ### Install fzf (command line fuzzy finder)
-fzf is an amazing fuzzy finder for the command line.
+`fzf` is an amazing fuzzy finder for the command line.
 
-Install fzf with homebrew:
+Install `fzf` with `homebrew`:
 
 ```bash
 brew install fzf
@@ -168,11 +168,11 @@ Examples of what you can do with it:
 
 
 ### Use fd with fzf
-fzf by default uses the find command to look for files and directories.
+`fzf` by default uses the find command to look for files and directories.
 
-Let’s replace that with fd for better functionality, like ignoring files ignored by git (with .gitignore).
+Let’s replace that with `fd` for better functionality, like ignoring files ignored by git (with .gitignore).
 
-Install fd:
+Install `fd`:
 
 ```bash
 brew install fd
@@ -238,8 +238,8 @@ To see examples of all of the themes you can use:
 
 ```bash
 bat --list-themes | fzf --preview="bat --theme={} --color=always /path/to/file"
-Make sure to replace /path/to/file with the path to an actual file.
 ```
+Make sure to replace /path/to/file with the path to an actual file.
 
 Install a custom theme
 If you find a theme on github for example, you can follow these steps.
@@ -258,7 +258,7 @@ cd "$(bat --config-dir)/themes"
 
 Then you can download the file for the theme you want to use into this directory.
 
-The file should use the #.tmTheme# extension.
+The file should use the `.tmTheme` extension.
 
 For example:
 
@@ -266,7 +266,7 @@ For example:
 curl -O https://raw.githubusercontent.com/folke/tokyonight.nvim/main/extras/sublime/tokyonight_night.tmTheme
 ```
 
-This will install the night version of the tokyonight theme.
+This will install the night version of the `tokyonight` theme.
 
 Then to use it run:
 
@@ -274,7 +274,7 @@ Then to use it run:
 bat cache --build
 ```
 
-And then add the following to your ~/.zshrc:
+And then add the following to your `~/.zshrc`:
 
 ```bash
 # ----- Bat (better cat) -----
@@ -282,13 +282,59 @@ And then add the following to your ~/.zshrc:
 export BAT_THEME=tokyonight_night
 ```
 
-Replace tokyonight_night with the name of the theme you would like to use.
+Replace `tokyonight_night` with the name of the theme you would like to use.
 
 Then save this file and run:
 
 ```bash
 source ~/.zshrc
 ```
+
+## tldr (user-friendly man pages)
+tldr is a huge collection of community maintained help pages with helpful summaries for `cli tools`. You can use this as an alternative to man pages.
+
+Install the rust client with homebrew:
+
+```bash
+brew install tlrc
+```
+
+Now you can use it just like man to learn more about a tool.
+
+For example to learn more about `eza`:
+
+```bash
+tldr eza
+```
+
+## thefuck
+thefuck is a really nice tool to auto correct mistyped commands.
+
+```bash
+brew install thefuck
+```
+
+Then open your `~/.zshrc` file and add:
+
+```bash
+# thefuck alias
+eval $(thefuck --alias)
+eval $(thefuck --alias fk)
+```
+
+This will setup the alias which is `fuck`.
+
+Save your zshrc file and run:
+
+```bash
+source ~/.zshrc
+```
+
+Now if mistype a command you can run `fuck` or `fk` afterwards.
+
+If there are is more than one result you can use your up and down arrow keys and then enter to select the one you want.
+
+
 
 ### essential git commands
 ```bash
@@ -338,7 +384,7 @@ kitten theme
    ```bash
 brew install powerlevel10k
 ```
-copy this into your file: .zshrc
+copy this into your file: `.zshrc`
 
 ```bash
 #history setup
@@ -374,9 +420,9 @@ Then run the following:
 echo "source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme" >> ~/.zshrc
 ```
 
-The powerlevel10k configuration wizard should show up now.
+The `powerlevel10k` configuration wizard should show up now.
 
-If you want to open the wizard manually do:
+If you want to open the wizard `manually` do:
 
 ```bash
 p10k configure
@@ -387,7 +433,7 @@ Answer the prompts to make the theme look like you would like it to. For the col
 ### 7. Better zsh history completion with up, down arrows
 Let’s improve the history completion with the up and down arrows.
 
-Open ~/.zshrc and add the following to the bottom of this file:
+Open `~/.zshrc` and add the following to the bottom of this file:
 
 ```bash
 HISTFILE=$HOME/.zhistory
@@ -407,11 +453,11 @@ Then go back to the command line and run:
 ```bash
 cat -v
 ```
-Now press on your up and down arrow keys.
+Now press on your `up` and `down` `arrow` keys.
 
 Copy the codes that you get as output.
 
-Open the ~/.zshrc file again and add the following to the bottom of this file:
+Open the `~/.zshrc` file again and add the following to the bottom of this file:
 
 ```bash
 # completion using arrow keys (based on history)
@@ -451,7 +497,7 @@ Now you can start using it!
 
 
 ***Install zoxide (better cd)***
-zoxide is an amazing alternative to cd.
+`zoxide` is an amazing alternative to `cd`.
 
 It will remember the directories you’ve visited in the past and make it really easy to navigate back to them by just typing out a portion of the name of the directory you want to visit.
 
@@ -460,7 +506,7 @@ brew install zoxide
 ```
 
 
-If you want to keep using cd then create an alias in ~/.zshrc:
+If you want to keep using cd then create an `alias` in `~/.zshrc`:
 
 ```bash
 # ---- Zoxide (better cd) ----
@@ -475,5 +521,5 @@ Save and then run:
 source ~/.zshrc
 ```
 
-Now you can use z as a much smarter replacement to cd.
+Now you can use z as a much smarter replacement to `cd`.
 
