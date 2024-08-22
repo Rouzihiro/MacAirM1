@@ -1,4 +1,4 @@
-# macOS Customization with Kitty, Yazi, Nvim, and Yabai
+### macOS Customization with Kitty, Yazi, Nvim, and Yabai
 
 ![Customization Showcase](./images/1.png)
 
@@ -98,8 +98,6 @@ kitten theme
 ```bash
    brew install nvim
 ```
-
-
 
 
 ### Install Tiling Window Manager - Yabai
